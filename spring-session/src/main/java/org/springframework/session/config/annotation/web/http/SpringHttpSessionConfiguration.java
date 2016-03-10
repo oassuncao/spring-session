@@ -83,13 +83,13 @@ import org.springframework.session.web.http.SessionRepositoryFilter;
 @Configuration
 public class SpringHttpSessionConfiguration {
 
-	private CookieHttpSessionStrategy defaultHttpSessionStrategy = new CookieHttpSessionStrategy();
+	protected CookieHttpSessionStrategy defaultHttpSessionStrategy = new CookieHttpSessionStrategy();
 
-	private HttpSessionStrategy httpSessionStrategy = defaultHttpSessionStrategy;
+	protected HttpSessionStrategy httpSessionStrategy = defaultHttpSessionStrategy;
 
-	private List<HttpSessionListener> httpSessionListeners = new ArrayList<HttpSessionListener>();
+	protected List<HttpSessionListener> httpSessionListeners = new ArrayList<HttpSessionListener>();
 
-	private ServletContext servletContext;
+	protected ServletContext servletContext;
 
 	@Bean
 	public SessionEventHttpSessionListenerAdapter sessionEventHttpSessionListenerAdapter() {

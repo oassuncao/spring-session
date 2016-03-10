@@ -60,19 +60,19 @@ import org.springframework.util.StringUtils;
 @EnableScheduling
 public class RedisHttpSessionConfiguration extends SpringHttpSessionConfiguration implements ImportAware {
 
-	private Integer maxInactiveIntervalInSeconds = 1800;
+	protected Integer maxInactiveIntervalInSeconds = 1800;
 
-	private ConfigureRedisAction configureRedisAction = new ConfigureNotifyKeyspaceEventsAction();
+	protected ConfigureRedisAction configureRedisAction = new ConfigureNotifyKeyspaceEventsAction();
 
-	private String redisNamespace = "";
+	protected String redisNamespace = "";
 
-	private RedisFlushMode redisFlushMode = RedisFlushMode.ON_SAVE;
+	protected RedisFlushMode redisFlushMode = RedisFlushMode.ON_SAVE;
 
-	private RedisSerializer<Object> defaultRedisSerializer;
+	protected RedisSerializer<Object> defaultRedisSerializer;
 
-	private Executor redisTaskExecutor;
+	protected Executor redisTaskExecutor;
 
-	private Executor redisSubscriptionExecutor;
+	protected Executor redisSubscriptionExecutor;
 
 	@Bean
 	public RedisMessageListenerContainer redisMessageListenerContainer(
